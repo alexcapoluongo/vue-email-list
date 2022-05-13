@@ -13,7 +13,7 @@
 <body>
     <div id="root">
          <ul>
-             <li> {{ email }} </li>
+             <li v-for="item in max"> {{ email }} </li>
         </ul>
          <button @click="generateEmail()"> click </button>
     </div>
