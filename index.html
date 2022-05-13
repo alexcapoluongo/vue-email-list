@@ -16,7 +16,7 @@
              <li> {{ email }} </li>
         </ul> -->
 
-        <p> {{ email }} </p>
+        <p v-if="this.isVisible == true"> {{ email }} </p>
          <button @click="generateEmail()"> click </button>
     </div>
 

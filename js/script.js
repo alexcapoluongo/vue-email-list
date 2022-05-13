@@ -9,8 +9,7 @@ const app = new Vue (
         data:{
             email: "",
             emailsArray: [],
-            min: 0,
-            max: 10
+            isVisible: false
         },
 
         methods: {
@@ -20,15 +19,20 @@ const app = new Vue (
                     .then((response) => {
 
                         this.email += ` ${response.data.response} ,  `
-                        console.log(response.data.response );  
-                          
+                        this.emailsArray.push(this.email)
+                        console.log(this.emailsArray);  
+                        this.showList()  
                     })
                 }
                 this.email = "" 
+               
             },
 
             
-            generateArray() {
+            showList() {
+                if(this.emailsArray.length > 9) {
+                    this.isVisible = true;
+                }
             }
 
         }
