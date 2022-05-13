@@ -7,7 +7,6 @@ const app = new Vue (
         el: "#root",
 
         data:{
-            email: "",
             emailsArray: [],
             isVisible: false
         },
@@ -17,15 +16,11 @@ const app = new Vue (
                 for(let i= 0; i < 10; i++) {
                     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then((response) => {
-
-                        this.email += ` ${response.data.response} ,  `
-                        this.emailsArray.push(this.email)
-                        console.log(this.emailsArray);  
+                        this.emailsArray.push(response.data.response)
                         this.showList()  
                     })
-                }
-                this.email = "" 
-               
+                } 
+                this.emailsArray = []
             },
 
             
