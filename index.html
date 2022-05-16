@@ -12,10 +12,10 @@
 </head>
 <body>
     <div id="root">
-         <ul v-if="this.isVisible == true">
+        <ul v-if="emailsArray.length > 9">
              <li v-for="item in emailsArray"> {{ item }} </li>
         </ul> 
-         <button @click="generateEmail()"> click </button>
+         <!-- <button @click="generateEmail()"> click </button> -->
         
     </div>
 
